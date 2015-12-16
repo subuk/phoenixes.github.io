@@ -57,6 +57,14 @@ StarWars = (function() {
       this.el.append(this.animation);
     }, this));
 
+    // Start the animation after 2 seconds
+    var that = this;
+    setTimeout(function(){
+      that.start.hide();
+      that.audio.play();
+      that.el.append(that.animation);
+    }, 2000);
+
     // Reset the animation and shows the start screen
     $(this.audio).bind('ended', $.proxy(function() {
       this.audio.currentTime = 0;
